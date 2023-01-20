@@ -40,8 +40,9 @@ public class CustomPermissionEvaluator implements PermissionEvaluator {
             //遍历权限
             for(sysPermission sysPermission:permissionList){
                 //获取权限集
-                List permissions = sysPermission.getPermissions();
-                if(targetDomainObject.equals(sysPermission.getUrl()) && permissions.contains(targetDomainObject)){
+                List<String> permissions = sysPermission.getPermissions();
+                if(targetDomainObject.equals(sysPermission.getUrl())
+                        && permissions.contains(permission)){
                     return true;
                 }
             }
